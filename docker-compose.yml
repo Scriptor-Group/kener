@@ -1,10 +1,10 @@
 version: '3.7'
 services:
   kener:
-    image: rajnandan1/kener:latest # assuming this is final namespace/image
+    build: .
     container_name: kener
     environment:
-      - TZ=Etc/GMT
+      - TZ=Etc/CET
       #- GH_TOKEN=
       #- API_TOKEN=
       #- API_IP
@@ -20,11 +20,9 @@ services:
 
       ### If any of the below are changed make sure the bound volume is correct as well ###
       #- CONFIG_DIR=/config
-      #- PUBLIC_KENER_FOLDER=/config/static
+      #- PUBLIC_KENER_FOLDER=/static/kener
       #- MONITOR_YAML_PATH=/config/monitors.yaml
       #- SITE_YAML_PATH=/config/site.yaml
 
     ports:
       - '3000:3000/tcp'
-    volumes:
-      - '/host/path/to/config:/config:rw'
