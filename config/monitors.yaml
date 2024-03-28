@@ -1,34 +1,29 @@
 - name: Scriptor-Artis Website
   tag: "website-sa"
   image: "/sa.png"
-  category: "Website"
   api:
     method: GET
     url: https://www.scriptor-artis.com/
 - name: Devana Website
   tag: "website-devana"
   image: "/devana.png"
-  category: "Website"
   api:
     method: GET
     url: https://www.devana.ai/
 - name: Clavus Website
   tag: "website-clavus"
   image: "/clavus.png"
-  category: "Website"
   api:
     method: GET
     url: https://www.clavus.io/
 - name: Clavus API
   tag: "api-clavus"
   image: "/clavus.png"
-  category: "Website"
   api:
     method: GET
     url: https://api-v2.clavus.io/health
 - name: Devana App
   tag: "app-devana"
-  category: "Website"
   image: "/devana.png"
   api:
     method: GET
@@ -36,7 +31,6 @@
 - name: Devana API
   tag: "api-devana"
   image: "/devana.png"
-  category: "Website"
   api:
     method: GET
     url: https://api.devana.ai/health
