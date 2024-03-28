@@ -14,17 +14,31 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Log in to GitHub Container Registry
-      uses: docker/login-action@v3
+    - name: Login to DockerHub
+      uses: docker/login-action@v5
       with:
-        registry: ghcr.io
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
-
+        registry: rg.fr-par.scw.cloud
+        username: nologin
+        password: ${{ secrets.SCALEWAY_GCP_KEY }}
+          
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: ghcr.io/scriptor-group/kener:latest
+        tags: rg.fr-par.scw.cloud/scriptor/kener:latest, rg.fr-par.scw.cloud/scriptor/kener:${{ github.sha }}
         context: .
         platforms: linux/amd64
+  
+  deploy-production:
+    name: Deploy to production
+    runs-on: ubuntu-latest
+    needs: build-and-push
+  
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG_V2 }}
+        with:
+          args: set image deployment/kener-deployment kener=rg.fr-par.scw.cloud/scriptor/kener:${{ github.sha }} --namespace=kener
+          
