@@ -22,7 +22,7 @@ jobs:
         password: ${{ secrets.SCALEWAY_GCP_KEY }}
           
     - name: Build and push Docker image
-      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v3
       with:
         push: true
         tags: rg.fr-par.scw.cloud/scriptor/kener:latest, rg.fr-par.scw.cloud/scriptor/kener:${{ github.sha }}
