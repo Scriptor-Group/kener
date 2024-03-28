@@ -24,7 +24,10 @@ jobs:
         registry: rg.fr-par.scw.cloud
         username: nologin
         password: ${{ secrets.SCALEWAY_GCP_KEY }}
-          
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+      
     - name: Build and push Docker image
       uses: docker/build-push-action@v3
       with:
