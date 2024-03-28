@@ -11,5 +11,9 @@ metaTags:
 hero:
   title: Scriptor-Artis Status
 categories:
-  - name: Website
-    description: "Scriptor-Artis website status"
+  - name: "Scriptor Artis"
+    description: "Scriptor Artis services status"
+  - name: Clavus
+    description: "Clavus services status"
+  - name: Devana
+    description: "Devana services status"
