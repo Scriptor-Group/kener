@@ -19,9 +19,23 @@
   api:
     method: GET
     url: https://www.clavus.io/
+- name: Clavus API
+  tag: "api-clavus"
+  image: "/clavus.png"
+  category: "API"
+  api:
+    method: GET
+    url: https://api-v2.clavus.io/health
 - name: Devana App
   tag: "app-devana"
   image: "/devana.png"
   api:
     method: GET
     url: https://app.devana.ai/
+- name: Devana API
+  tag: "api-devana"
+  image: "/devana.png"
+  category: "API"
+  api:
+    method: GET
+    url: https://api.devana.ai/health
