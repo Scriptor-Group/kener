@@ -32,7 +32,7 @@
   image: "/clavus.png"
   api:
     method: GET
-    url: https://onlyoffice-c.clavus.io/welcome/
+    url: https://office.clavus.cloud/welcome/
 - name: Devana App
   tag: "app-devana"
   image: "/devana.png"
